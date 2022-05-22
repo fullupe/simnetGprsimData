@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <p>simnet Ghana</p>
+        <p>simnet Ghana Limited</p>
       </main>
 
       <footer className="flex h-24 w-full items-center justify-center border-t">
