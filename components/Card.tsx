@@ -120,8 +120,9 @@ function Card() {
             GPRS Record{' '}
           </p>
 
-          <form className="flex items-center mt-3 space-x-3 mb-4">
-            <AiOutlineSearch className="text-black h-8 w-8 p-1" />
+          <form className="flex items-center mt-3 space-x- mb-4">
+            {/* <AiOutlineSearch className="text-black h-8 w-8 p-1" /> */}
+            {/* <div className="flex "> */}
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -129,16 +130,18 @@ function Card() {
               type="number"
               autoFocus={true}
               placeholder="Enter Tpm Number"
-              className=" p-2 flex-1 text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
+              className=" p-1 w-44 flex-1 text-xl rounded-lg bg-gray-100 text-black outline-none placeholder:text-xl"
             />
             {/* <button disabled={!input} className="text-white rounded-lg bg-blue-700 disabled:text-gray-800 cousor-pointer p-2 ">Search</button> */}
             <button
               onClick={handleSearch}
               disabled={!input}
-              className="bg-transparent hover:bg-blue-500 disabled:text-gray-800 text-white font-semibold hover:text-white py-2 px-4 border border-white hover:border-transparent rounded"
+              className="bg-transparent  hover:bg-blue-500 disabled:text-gray-800 text-white font-semibold hover:text-white py-0 ml-2 px-2 border border-white hover:border-transparent rounded"
             >
-              Search
+             <AiOutlineSearch className="text-white h-8 w-8 p-1 disabled:text-gray-800" />
             </button>
+            {/* </div> */}
+
           </form>
 
           <div className=" text-gray-900 items-center flex flex-col w-full">
