@@ -1,22 +1,62 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { useRef } from 'react';
+import Card from '../components/Card';
+import Footer from "../components/Footer";
+import  { Toaster } from 'react-hot-toast';
 //import Image from 'next/image'
 
 const Home: NextPage = () => {
+  
+  ///const video = useRef<HTMLVideoElement>();
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex justify-content items-center flex-col h-screen">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Toaster />
+      <video
+                className="w-full h-screen object-cover  opacity-90"
+                //src=" ../bgvideo.mp4" 
+                //type="video/mp4"
+                loop
+                controls={false}
+                muted
+                autoPlay
+                />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <p>simnet Ghana Limited</p>
-      </main>
+      <div className="top-0 right-0 left-0 bottom-0 absolute h-screen ">
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        simnet
-      </footer>
+    <div className="
+     
+     
+    opacity-90
+    pt-8
+    bg-slate-100 
+    flex 
+    flex-col
+    justify-center 
+    items-center 
+    h-screenn 
+    overflow-hidden">
+
+        
+
+           {/* <Clock secondRatio={secondRatio} minuteRatio={minuteRatio} hourRatio={hourRatio}/> */}
+  
+           <Card/>
+
+           <Footer/>
+    
+ 
+           
+   </div>
+
+
+
+    </div>
     </div>
   )
 }
