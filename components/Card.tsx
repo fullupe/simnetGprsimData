@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import toast from 'react-hot-toast'
 
-//import Data from '../Data'
+import Data from '../Data'
 
 function Card() {
   const [input, setInput] = useState<string>('')
@@ -18,18 +18,40 @@ function Card() {
 
   const [reflesh, setReflesh] = useState<boolean>(false)
 
+  const [flagoff, setFlagoff] = useState<boolean>(false)
+
   //console.log(Data)
 
   const handleSearch = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-    DataApi.filter((val: { tpm: string }) => {
+    Data.filter((val: { tpm: string }) => {
       if (!input) {
         return val
       } else if (val.tpm?.toLowerCase().includes(input?.toLowerCase())) {
         //return val
-        setTpmInfo(val)
+        setTpmInfo(val);
+
+        toast('Record Fund!',{
+          icon:'🚀'
+        })
+      
+        // setFlagoff(true);
+      
+      
+      }else{
+        //setTpmInfo({})
+        //setFlagoff(false)
+        // toast('No Record Fund!',{
+        //   icon:'🚀'
+        // })
+      
       }
+      
+  
     })
+
+  
+
   }
 
 
@@ -112,17 +134,17 @@ function Card() {
 
   return (
     <div
-      className={`py-4 px-6 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-4/5 md:max-w-md !important text-lg rounded-2xl relative  flex flex-col h leading- w-4/5 text-white mt-8 mb-12 overflow-hidden`}
+      className={`py-4 px-4 bg-whitee bg-gradient-to-r from-sky-500 to-indigo-500 shadow-2xl h-4/5 md:max-w-md !important text-lg rounded-2xl relative  flex flex-col  leading- w-4/5 text-white mt-8 mb-8 overflow-hidden`}
     >
-      <div className="felx flex-col space-y-6">
-        <div className=" h-96 bg-gray-00  items-center flex flex-col ">
+      <div className="felx flex-col space-y-2">
+        <div className=" h- bg-gray-00  items-center flex flex-col mb-8 ">
           <p className="text-gray-900 text-xl font-bold border-b ">
             GPRS Record{' '}
           </p>
 
           <form className="flex items-center mt-3 space-x- mb-4">
-            {/* <AiOutlineSearch className="text-black h-8 w-8 p-1" /> */}
-            {/* <div className="flex "> */}
+           
+            <div className="flex w-full space-x-8">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -140,14 +162,14 @@ function Card() {
             >
              <AiOutlineSearch className="text-white h-8 w-8 p-1 disabled:text-gray-800" />
             </button>
-            {/* </div> */}
+            </div>
 
           </form>
 
           <div className=" text-gray-900 items-center flex flex-col w-full">
             <p className="border-b text-white">Terminal Details</p>
 
-            <div className="w-full flex flex-col mt-2 items-right space-y-4">
+            <div className="w-full flex flex-col mt-4  items-right space-y-4">
               <p className="p-1 px-4 bg-gray-900 rounded-lg text-white shadow-lg opacity-50">
                 Retailer Name:{' '}
                 <small className="ml-2 text-center text-white uppercase ">
@@ -186,7 +208,7 @@ function Card() {
           </div>
         </div>
 
-        <hr />
+        <hr  />
 
         <form className=" flex flex-col h-full w-full bg-yellow-00 p-4 space-y-3">
           <input

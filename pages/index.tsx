@@ -11,7 +11,7 @@ const Home: NextPage = () => {
   ///const video = useRef<HTMLVideoElement>();
 
   return (
-    <div className="flex justify-content items-center flex-col h-screen">
+    <div className="flex justify-content items-center flex-col h-screen ">
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
      
     opacity-90
     pt-8
-    bg-slate-100 
+    bg-slate-500 
     flex 
     flex-col
     justify-center 

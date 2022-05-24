@@ -2,29 +2,38 @@ const Data =[
     {
         tpm:"100",
         retailerName:"Johnson ",
-        retailerid:"09090",
+        retailerId:"09090",
         lmc:"123124",
-        sim_Serial:"12345",
-        sim_number:"1231234",
-        sim_type:"Mtn"
+        simSerial:"12345",
+        simNumber:"1231234",
+        simType:"Mtn"
     },
     {
         tpm:"200",
         retailerName:"William",
-        retailerid:"08080",
+        retailerId:"08080",
         lmc:"123123",
-        sim_Serial:"12345",
-        sim_number:"1231234",
-        sim_type:"voda"
+        simSerial:"12345",
+        simNumber:"1231234",
+        simType:"voda"
     },
     {
         tpm:"300",
         retailerName:"Kenneth",
-        retailerid:"07070",
+        retailerId:"07070",
         lmc:"123124",
-        sim_Serial:"12345",
-        sim_number:"1231234",
-        sim_type:"Tigo"
+        simSerial:"12345",
+        simNumber:"1231234",
+        simType:"Tigo"
+    },
+    {
+        tpm:"400",
+        retailerName:"NanaKwadjo",
+        retailerId:"07070",
+        lmc:"123124",
+        simSerial:"12345",
+        simNumber:"1231234",
+        simType:"Tigo"
     }
 ]
 
