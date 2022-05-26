@@ -67,18 +67,6 @@ function Card() {
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault()
-
-    // const formData = {
-    //   tpm: '300',
-    //   retailerName: 'william',
-    //   retailerId: '121212',
-    //   lmc: '9090',
-    //   simSerial: '12345678',
-    //   simNumber: '098765',
-    // }
-
-   
-
     axios
       .patch(
         `https://sheet.best/api/sheets/fd63dafd-0803-427b-88f2-5aa4c83d209f/tpm/*${input}*`,
@@ -156,6 +144,7 @@ function Card() {
             />
             {/* <button disabled={!input} className="text-white rounded-lg bg-blue-700 disabled:text-gray-800 cousor-pointer p-2 ">Search</button> */}
             <button
+            type="submit"
               onClick={handleSearch}
               disabled={!input}
               className="bg-transparent  hover:bg-blue-500 disabled:text-gray-800 text-white font-semibold hover:text-white py-0 ml-2 px-2 border border-white hover:border-transparent rounded"
@@ -245,6 +234,7 @@ function Card() {
             </optgroup>
           </select>
           <button
+          type="submit"
             onClick={handleSubmit}
             disabled={!tpmInfo?.tpm || !simserialnumber}
             className="bg-transparent hover:bg-blue-500 text-white font-semibold hover:text-white py-2 px-4 border disabled:text-gray-800 border-white hover:border-transparent rounded"
