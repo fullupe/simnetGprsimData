@@ -5,6 +5,8 @@ import toast from 'react-hot-toast'
 
 import Data from '../Data'
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL
+
 function Card() {
   const [input, setInput] = useState<string>('')
 
@@ -56,7 +58,7 @@ function Card() {
 
 
   useEffect(() => {
-      axios.get("https://sheet.best/api/sheets/fd63dafd-0803-427b-88f2-5aa4c83d209f").then((response)=>{
+      axios.get(`${baseUrl}`).then((response)=>{
       setDataApi(response.data)
       console.log(response.data)
       //setLoading(false)
@@ -69,7 +71,7 @@ function Card() {
     e.preventDefault()
     axios
       .patch(
-        `https://sheet.best/api/sheets/fd63dafd-0803-427b-88f2-5aa4c83d209f/tpm/*${input}*`,
+        `${baseUrl}/tpm/*${input}*`,
        
         { simSerial: simserialnumber, simType:simType }
       )
